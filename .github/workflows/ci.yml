@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4 # Clones your repo into that machine
 
       - name: Set up Python
-        uses: actions/setup-python@v5 # Installs Python
+        uses: actions/setup-python@v5 # Installs Python and dependencies onto new Linux machine
         with:
           python-version: "3.9"
 
