@@ -1,0 +1,8 @@
+pyproject.toml
+src/mathlib/__init__.py
+src/mathlib/physics.py
+src/mathlib.egg-info/PKG-INFO
+src/mathlib.egg-info/SOURCES.txt
+src/mathlib.egg-info/dependency_links.txt
+src/mathlib.egg-info/top_level.txt
+tests/test_physics.py
