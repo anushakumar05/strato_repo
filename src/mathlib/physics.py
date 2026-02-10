@@ -1,3 +1,7 @@
+import math
+
+UMMY_CONSTANT = 42
+
 def orbital_velocity(mu: float, r: float) -> float:
     """
     Compute orbital velocity.
