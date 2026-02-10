@@ -1,4 +1,4 @@
-name: CI # Continuous Integration
+name: CI # Continuous Integration is the name of the workflow
 
 # Run this automatically when code is pushed or a PR is opened
 on:
