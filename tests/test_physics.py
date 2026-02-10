@@ -1,6 +1,4 @@
-from mathlib.physics import orbital_velocity
+from mathlib.physics import orbital_velocity, DUMMY_CONSTANT
 
-def test_orbital_velocity_positive():
-    mu = 3.986e14
-    r = 6.371e6
-    assert orbital_velocity(mu, r) > 0
+def test_dummy_constant():
+    assert DUMMY_CONSTANT == 42

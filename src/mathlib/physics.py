@@ -1,11 +1,4 @@
-import math
-
-UMMY_CONSTANT = 42
-
-def orbital_velocity(mu: float, r: float) -> float:
-    """
-    Compute orbital velocity.
-    mu = standard gravitational parameter
-    r = orbital radius
-    """
+def orbital_velocity(mu, r):
     return (mu / r) ** 0.5
+
+DUMMY_CONSTANT = 42
