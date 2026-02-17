@@ -1,6 +1,6 @@
 import math
 
-UMMY_CONSTANT = 42
+DUMMY_CONSTANT = 42
 
 def orbital_velocity(mu: float, r: float) -> float:
     """
