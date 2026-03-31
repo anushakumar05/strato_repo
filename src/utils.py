@@ -1,80 +1,38 @@
-import math
+import collections
 
-def calculate_cube_volume(side: float) -> float:
+def reverse_array(arr: collections.abc.Sequence) -> list:
     """
-    Calculates the volume of a cube given its side length.
+    Reverses the order of elements in a sequence and returns a new list.
+
+    This function takes any sequence (like a list, tuple, or string)
+    and returns a new list with its elements in reverse order.
+    The original sequence remains unchanged.
 
     Args:
-        side (float): The length of one side of the cube.
+        arr (collections.abc.Sequence): The input sequence to be reversed.
 
     Returns:
-        float: The volume of the cube.
+        list: A new list containing the elements of the input sequence
+              in reverse order.
 
     Raises:
-        ValueError: If the side length is negative.
+        TypeError: If the input `arr` is not a sequence.
+
+    Examples:
+        >>> reverse_array([1, 2, 3])
+        [3, 2, 1]
+        >>> reverse_array(['a', 'b', 'c'])
+        ['c', 'b', 'a']
+        >>> reverse_array("hello")
+        ['o', 'l', 'l', 'e', 'h']
+        >>> reverse_array([])
+        []
+        >>> reverse_array((10, 20))
+        [20, 10]
     """
-    if side < 0:
-        raise ValueError("Side length cannot be negative.")
-    return side ** 3
-
-def sort_array(arr: list) -> list:
-    """
-    Sorts a list of comparable elements in ascending order.
-
-    Args:
-        arr (list): The list of elements to be sorted.
-
-    Returns:
-        list: A new list containing the sorted elements.
-
-    Raises:
-        TypeError: If the input is not a list, or if elements in the list are not comparable.
-    """
-    if not isinstance(arr, list):
-        raise TypeError("Input must be a list.")
+    if not isinstance(arr, collections.abc.Sequence):
+        raise TypeError("Input must be a sequence (e.g., list, tuple, string).")
     
-    # Python's built-in sorted() function handles sorting of various comparable types
-    # and raises TypeError for non-comparable types within the list.
-    return sorted(arr)
-
-if __name__ == '__main__':
-    # Example usage for calculate_cube_volume
-    print(f"Volume of a cube with side 5: {calculate_cube_volume(5.0)}")
-    print(f"Volume of a cube with side 2.5: {calculate_cube_volume(2.5)}")
-    print(f"Volume of a cube with side 0: {calculate_cube_volume(0.0)}")
-
-    # Example of error handling for calculate_cube_volume
-    try:
-        calculate_cube_volume(-4.0)
-    except ValueError as e:
-        print(f"Error: {e}")
-
-    print("\n--- sort_array examples ---")
-    # Example usage for sort_array
-    list1 = [3, 1, 4, 1, 5, 9, 2, 6]
-    print(f"Original list: {list1}")
-    print(f"Sorted list: {sort_array(list1)}")
-
-    list2 = ["banana", "apple", "cherry"]
-    print(f"Original list: {list2}")
-    print(f"Sorted list: {sort_array(list2)}")
-
-    list3 = []
-    print(f"Original list: {list3}")
-    print(f"Sorted list: {sort_array(list3)}")
-
-    list4 = [7.5, 2.1, 10.0, 0.5]
-    print(f"Original list: {list4}")
-    print(f"Sorted list: {sort_array(list4)}")
-
-    # Example of error handling for sort_array
-    try:
-        sort_array("not a list")
-    except TypeError as e:
-        print(f"Error sorting non-list input: {e}")
-
-    try:
-        # This will raise TypeError because int and str are not comparable
-        sort_array([1, 5, "hello", 3])
-    except TypeError as e:
-        print(f"Error sorting list with non-comparable elements: {e}")
+    # Using slicing to create a reversed copy of the sequence.
+    # We convert it to a list to ensure the return type is consistently a list.
+    return list(arr[::-1])
